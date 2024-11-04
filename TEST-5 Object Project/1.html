@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var e_commerce = {
+  products: ["earphone", "headphone", "earpods"],
+  quantity: [4, 3, 2],
+  price: [700, 800, 1000],
+
+  total_price: function() {
+    var totalPrice = 0;
+    for (var i = 0; i < this.products.length; i++) {
+      totalPrice += this.quantity[i] * this.price[i];
+    }
+    return totalPrice;
+  }
+};
+
+console.log("Total Price: " + e_commerce.total_price());
+
+</script>

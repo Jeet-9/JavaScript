@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Day of the Week Identifier</h1>
+        <input type="number" id="priceInput" placeholder="Enter the value">
+        <p id="Output"></p>
+    </div>
+</body>
+</html>
+<script>
+var value = prompt("Enter the value:");
+if (value !== null) {
+    value = Number(value);
+
+    switch (true) {
+        case (value === 1):
+            console.log("sunday!");
+            break;
+        case (value === 2):
+            console.log("Monday!");
+            break;
+        case (value === 3):
+            console.log("Tuesday!");
+            break;
+        case (value === 4):
+            console.log("Wednesday!");
+            break;
+        case (value === 5):
+            console.log("Thrusday!");
+            break; 
+        case (value === 6):
+            console.log("Friday!");
+            break; 
+        case (value === 7):
+            console.log("Saturday!");
+            break;  
+        default:
+            document.getElementById("Output").innerHTML = "Enter A value!"
+            break;
+    }
+} else {
+    alert("You didn't enter a price!");
+}
+</script>

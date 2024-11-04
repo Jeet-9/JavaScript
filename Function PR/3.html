@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>the power of a base number raised</h1>
+        <h1>Enter the power</h1>
+        <input type="text" id="in1">
+        <h1>Enter the raised</h1>
+        <input type="text" id="in2">
+        
+    </center>
+</body>
+<script>
+    let number = function base(){
+        let a = document.getElementById("in1").value
+        let b = document.getElementById("in2").value
+
+        let c = 1;
+
+        for (let i = 0; i < b; i++) {
+         c *= a;
+    }
+    console.log(c)
+    }
+    number()
+</script>
+</html>

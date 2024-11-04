@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+</head>
+<style>
+    .slider {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: none;
+  width: 100%;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter {
+    width: 100px;
+    height: 100px;
+    background: black;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: verdana;
+    float: left;
+    margin: 30px;
+    text-shadow: 1px 1px black;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .content {
+    flex: 1;
+  }
+  footer {
+    background: #282c34;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  footer a {
+    color: #61dafb;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  .contact-info {
+    display: none;
+    margin-top: 20px;
+  }
+  .toggle-btn {
+    background-color: #61dafb;
+    border: none;
+    padding: 10px 20px;
+    color: #282c34;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  .social-icons a {
+    color: #61dafb;
+    margin: 0 10px;
+    font-size: 24px;
+  }
+  .social-icons a:hover {
+    color: #ffffff;
+  }
+  @media (max-width: 600px) {
+    footer {
+      text-align: left;
+      padding: 20px;
+    }
+    footer a {
+      display: block;
+      margin: 10px 0;
+    }
+    .social-icons {
+      text-align: center;
+    }
+  }
+</style>
+<body>
+
+<div class="slider">
+  <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+  <img class="slides" src="2.webp">
+  <img class="slides" src="3.webp">
+  <img class="slides" src="4.webp">
+  <button class="next" onclick="plusSlides(1)">&#10095;</button>
+</div>
+<br>
+<br>
+
+<center>
+  <div class="main">
+    <div class="counter" data-speed="1000">400</div>
+    <div class="counter" data-speed="1000">300</div>
+    <div class="counter" data-speed="1000">200</div>
+    <div class="counter" data-speed="1000">100</div>
+</div>
+</center>
+
+
+<div class="content">
+</div>
+<footer>
+  <div>
+    <a href="#link1">Home</a>
+    <a href="#link2">About</a>
+    <a href="#link3">Services</a>
+    <a href="#link4">Blog</a>
+    <a href="#link5">Contact</a>
+  </div>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+  <button class="toggle-btn">Contact Info</button>
+  <div class="contact-info">
+    <p>Address: 1234 Street Name, City, Country</p>
+    <p>Phone: (123) 456-7890</p>
+    <p>Website: <a href="https://www.example.com">www.example.com</a></p>
+  </div>
+</footer>
+</body>
+</html>
+<script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+
+(() => {
+    const counter = document.querySelectorAll('.counter');
+    const array = Array.from(counter);
+    array.map((item) => {
+        let counterInnerText = item.textContent;
+
+        let count = 1;
+        let speed = item.dataset.speed / counterInnerText
+        function counterUp() {
+            item.textContent = count++
+            if (counterInnerText < count) {
+                clearInterval(stop);
+            }
+        }
+        const stop = setInterval(() => {
+            counterUp();
+        }, speed);
+    })
+})()
+
+
+document.querySelector('.toggle-btn').addEventListener('click', () => {
+    const contactInfo = document.querySelector('.contact-info');
+    contactInfo.style.display = contactInfo.style.display === 'block' ? 'none' : 'block';
+  });
+</script>

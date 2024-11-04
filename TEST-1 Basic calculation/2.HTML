@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Interest Calculator</title>
+</head>
+<body>
+  <h3>Principal Amount</h3>
+  <input type="text" id="in1">
+
+  <h3>Annual Rate</h3>
+  <input type="text" id="in2">
+
+  <h3>Time</h3>
+  <input type="text" id="in3">
+
+  <p id="final">Result:</p>
+</body>
+</html>
+<script>
+  let a = document.getElementById("in1").value
+  let b = document.getElementById("in2").value
+  let c = document.getElementById("in3").value
+  let finalresult = a * b * c / 100
+  let final2 = finalresult + +a
+
+  document.getElementById("final").innerHTML=final2
+</script>

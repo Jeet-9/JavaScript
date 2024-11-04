@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Reception Guest Manager</h1>
+        <label for="guestInput">Enter the number of guests:</label>
+        <input type="number" id="guestInput" placeholder="Number of guests">
+        <button>Submit</button>
+    </center>
+</body>
+</html>
+<script>
+            const input = document.getElementById('guestInput').value;
+            const Guests = parseInt(input, 10);
+
+            if (Guests || Guests < 0) {
+                console.log("Invalid input. Please enter a valid number of guests.");
+            } else if (Guests === 0) {
+                console.log("no one is attending the reception. Are you sure?");
+            } else if (Guests === 1) {
+                console.log("Great! There is one guest attending the reception.");
+            } else if (Guests === 2) {
+                console.log("Perfect! You and one other person will be attending the reception.");
+            } else if (Guests > 2) {
+                console.log(`${Guests} guests will be attending the reception.`);
+            }
+
+            for (let i = 1; i <= Guests; i++) {
+                if (i === 3) continue;
+                console.log(`Invalid input. Please enter a valid number of guests.`);
+            }
+</script>

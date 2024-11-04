@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Day of the Week Identifier</h1>
+        <input type="number" id="priceInput" required placeholder="Enter the value">
+        <input type="number" id="priceInput1" required placeholder="Enter the 2 value">
+        <p id="Output"></p>
+    </div>
+</body>
+</html>
+<script>
+    var a = document.getElementById("priceInput").value
+    var b = document.getElementById("priceInput1").value
+
+    a = parseInt(a);
+    b = parseInt(b);
+
+    if(a >= 3 && b >= 100){
+        console.log("Congratulations! You are eligible for a special offer.")
+        document.getElementById("Output").innerHTML = "Yes"
+    } else {
+        console.log("Sorry! You are not eligible for the special offer.")
+        document.getElementById("Output").innerHTML = "No"
+    }
+</script>

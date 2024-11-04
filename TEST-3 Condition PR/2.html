@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Fibonacci Generator</title>
+</head>
+<body>
+    <h1>Fibonacci Sequence Generator</h1>
+    <p>Enter the number of Fibonacci numbers to generate:</p>
+    <input type="number" id="numberInput" value="10">
+    <button onclick="generateAndDisplayFibonacci()">Generate</button>
+    <h2>Fibonacci Sequence:</h2>
+    <p id="fibonacciOutput"></p>
+
+    <script>
+            var n = document.getElementById('numberInput').value;
+            var fibonacciSequence = "";
+
+            if (n >= 1) fibonacciSequence.push(0); 
+            if (n >= 2) fibonacciSequence.push(1); 
+
+            for (var i = 2; i < n; i++) {
+                var nextFibonacci = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+            }
+
+            document.getElementById('fibonacciOutput').innerText = fibonacciSequence;
+    </script>
+</body>
+</html>

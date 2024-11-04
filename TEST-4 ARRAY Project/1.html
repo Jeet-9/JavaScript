@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let inputArray = ["assignment", "problem", "media", "upload","apple"];
+    let filteredArray = inputArray.filter(str => {
+    let firstChar = str[0];
+    let lastChar = str[str.length - 1];
+    return firstChar === 'a' || lastChar === 'a';
+});
+console.log(filteredArray);
+</script>

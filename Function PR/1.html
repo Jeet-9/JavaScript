@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>even or odd number</h1>
+        <h1>Enter the number</h1>
+        <input type="text" id="inp">
+    </center>
+</body>
+<script>
+    let number = () =>{
+        let a = document.getElementById("inp").value
+
+        if (a % 2 === 0) {
+            console.log("EVEN")
+        } else {
+            console.log("ODD")
+        }
+    }
+    number()
+</script>
+</html>

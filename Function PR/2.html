@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>factorial</h1>
+        <h1>Enter the number</h1>
+        <input type="text" id="inp">
+        
+    </center>
+</body>
+<script>
+    (function factorial(){
+        let a = document.getElementById("inp").value
+        let p =1;
+
+        for (let i = 1; i <= a; i++) {    
+            p=p*i;
+        }
+        console.log(p);
+    })()
+</script>
+</html>

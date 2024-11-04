@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.product-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-images img {
+    width: 300px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.thumbnail-images img {
+    width: 60px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.product-details h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.product-details .price {
+    color: #B12704;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#add-to-cart {
+    background-color: #FF9900;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+</style>
+<body>
+    <header id="header"></header>
+    <main id="main-content"></main>
+</body>
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('header').innerHTML = `
+        <div>MyShop</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    `;
+
+    const product = {
+        title: 'Sample Product',
+        price: '$99.99',
+        description: 'A great product you will love!',
+        images: ['https://rukminim2.flixcart.com/image/312/312/ktketu80/mobile/2/y/o/iphone-13-mlpk3hn-a-apple-original-imag6vpyur6hjngg.jpeg?q=70']
+    };
+
+    document.getElementById('main-content').innerHTML = `
+        <div class="product-container">
+            <div class="product-images">
+                <div class="thumbnail-images">
+                    ${product.images.map(img => `<img src="${img}" alt="Thumbnail" onclick="changeImage('${img}')">`).join('')}
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>${product.title}</h1>
+                <p class="price">${product.price}</p>
+                <p class="description">${product.description}</p>
+                <button id="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-images">
+                <div class="thumbnail-images">
+                    ${product.images.map(img => `<img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/h/d/9/-original-imagtc2qzgnnuhxh.jpeg?q=70" alt="Thumbnail" onclick="changeImage('${img}')">`).join('')}
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>${product.title}</h1>
+                <p class="price">${product.price}</p>
+                <p class="description">${product.description}</p>
+                <button id="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-images">
+                <div class="thumbnail-images">
+                    ${product.images.map(img => `<img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/a/h/7/-original-imaghx9qaepzajta.jpeg?q=70" alt="Thumbnail" onclick="changeImage('${img}')">`).join('')}
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>${product.title}</h1>
+                <p class="price">${product.price}</p>
+                <p class="description">${product.description}</p>
+                <button id="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-images">
+                <div class="thumbnail-images">
+                    ${product.images.map(img => `<img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/a/b/0/-original-imaghx9qnhzxegu2.jpeg?q=70" alt="Thumbnail" onclick="changeImage('${img}')">`).join('')}
+                </div>
+            </div>
+            <div class="product-details">
+                <h1>${product.title}</h1>
+                <p class="price">${product.price}</p>
+                <p class="description">${product.description}</p>
+                <button id="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    `;
+
+    document.getElementById('add-to-cart').addEventListener('click', () => {
+        alert('Product added to cart!');
+    });
+});
+
+function changeImage(imageUrl) {
+    document.getElementById('main-image').src = imageUrl;
+}
+</script>
