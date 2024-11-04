@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <h1 style="border: 1px solid rebeccapurple; color: red;"> Tax Calculator </h1>
+        <h1>entel tha salary</h1>
+        <input type="text" id="inp"></input>
+        <h1 id="ans"></h1>
+    </center>
+    
+</body>
+<script>
+
+    let a= document.getElementById("inp").value
+
+    if( a === "" ){
+        document.getElementById("ans").innerHTML="enter salary"
+
+    }else{
+        if(a >= 0 && a <= 10000){
+            document.getElementById("ans").innerHTML= a * 5 / 100
+        }else if(a >= 10001 && a <= 20000){
+            document.getElementById("ans").innerHTML= a * 10 / 100
+        }else if(a >= 20001 && a <= 30000){
+            document.getElementById("ans").innerHTML= a * 15 / 100
+        }else if(a >= 30001 && a <= 40000){
+            document.getElementById("ans").innerHTML= a * 20 / 100
+        }else{
+            document.getElementById("ans").innerHTML= a * 25 / 100
+        }
+}
+</script>
+</html>

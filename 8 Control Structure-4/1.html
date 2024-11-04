@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Food Order System</h1>
+        <input type="number" id="priceInput" placeholder="Enter the price of the food item">
+        <p id="foodOutput"></p>
+    </div>
+</body>
+</html>
+<script>
+var price = prompt("Enter the price of the food item:");
+if (price !== null) {
+    price = Number(price);
+
+    switch (true) {
+        case (price === 10):
+            alert("You ordered a Sandwich!");
+            break;
+        case (price === 20):
+            alert("You ordered a Burger!");
+            break;
+        case (price === 30):
+            alert("You ordered a Pizza!");
+            break;
+        case (price === 40):
+            alert("You ordered a Steak!");
+            break;
+        default:
+            alert("Sorry, we don't have any items for that price.");
+            break;
+    }
+} else {
+    alert("You didn't enter a price!");
+}
+</script>

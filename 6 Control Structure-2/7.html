@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <h1 style="border: 1px solid rebeccapurple;color: red;">Swap 3 numbers take value from user</h1>
+    
+        <h1>entel tha first </h1>
+        <input type="text" id="in1"></input>
+    
+        <h1>entel tha second </h1>
+        <input type="text" id="in2"></input>
+    
+        <h1>entel tha third </h1>
+        <input type="text" id="in3"></input>
+    
+        <h1 id="ans"></h1>
+        <!-- <h1 id="ans2"></h1>
+        <h1 id="ans3"></h1> -->
+    </center>
+
+
+    
+</body>
+<script>
+
+let a= document.getElementById("in1").value
+let b= document.getElementById("in2").value
+let c= document.getElementById("in3").value
+
+if( a === "" || b === "" || c === ""){
+        document.getElementById("ans").innerHTML="enter marsh"
+
+    }else{
+        let num;
+        num=a;
+        a=b;
+        b=c;
+        c=num;
+
+        document.getElementById("ans").innerHTML= `${a},${b},${c}`
+}
+
+</script>
+</html>

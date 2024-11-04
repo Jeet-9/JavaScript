@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let quotes = [
+    {
+        text: "Education is the key to success.",
+        author: "Unknown",
+        category: "Education"
+    },
+    {
+        text: "The roots of education are bitter, but the fruit is sweet.",
+        author: "Aristotle",
+        category: "Education"
+    },
+    {
+        text: "Life is a journey, and education is the compass.",
+        author: "Unknown",
+        category: "Life"
+    }
+];
+
+for (let i = 0; i < quotes.length; i++) {
+    let quote = quotes[i];
+    if (quote.category === "Education") {
+        console.log(quote.text + " - " + quote.author);
+    }
+}
+</script>

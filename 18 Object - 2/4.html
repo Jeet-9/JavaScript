@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var amazon = [
+        {name: "Speaker", price:5400, rating:4},
+        {name: "Headphones", price:3000, rating:3},
+        {name: "Playstation", price:20000, rating:5},
+    ]
+
+    let maximum = 0
+    for(let i = 0 ; i < amazon.length ; i++){
+        if(amazon[i].price > maximum){
+            maximum = amazon[i].price
+        }
+    }
+    console.log(maximum)
+
+    let minimum = 5000
+    for(let i = 0 ; i < amazon.length ; i++){
+        if(amazon[i].price < minimum){
+            minimum = amazon[i].price
+        }
+    }
+    console.log(minimum)
+
+    let sum = 0
+    let avg = 0
+    for(let i = 0 ; i < amazon.length ; i++){
+        sum += amazon[i].rating
+        avg = sum / amazon.length
+    }
+    console.log(avg)
+
+</script>

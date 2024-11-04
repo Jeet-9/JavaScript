@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+let student = {
+    name: "Viraj",
+    age: 24,
+    grade: 2,
+    height: 6.2,
+    course: "fullstack"
+};
+
+console.log("Name:", student.name);
+console.log("Age:", student.age);
+
+student.age = 26; 
+
+student.height = "6.2 feet";
+student.course = "fullstack Web";
+
+delete student.course;
+
+student.greet = function() {
+    console.log("Have a very good day!");
+};
+
+let rectangle = {
+    length: 30,
+    width: 50,
+    findPerimeter: function() {
+        return 2 * (this.length + this.width);
+    }
+};
+
+console.log("Perimeter of the rectangle:", rectangle.findPerimeter());
+
+</script>

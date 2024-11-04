@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let books = [
+    {
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        price: 20,
+        quantityAvailable: 3
+    },
+    {
+        title: "To Kill a Mockingbird",
+        author: "Harper Lee",
+        price: 15,
+        quantityAvailable: 5
+    },
+    {
+        title: "1984",
+        author: "George Orwell",
+        price: 25,
+        quantityAvailable: 0
+    },
+    {
+        title: "Pride and Prejudice",
+        author: "Jane Austen",
+        price: 10,
+        quantityAvailable: 2
+    }
+];
+
+let budget = 60;
+let affordableBooks = Books(books, budget);
+console.log(affordableBooks);
+
+function Books(books, budget) {
+    let affordableBooks = [];
+
+    for (let i = 0; i < books.length; i++) {
+        let book = books[i];
+        if (book.price <= budget && book.quantityAvailable >= 1) {
+            affordableBooks.push(book);
+        }
+    }
+
+    return affordableBooks;
+}
+
+
+</script>

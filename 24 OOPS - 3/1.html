@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+class Car {
+    constructor(color, model, engine, price) {
+        this.color = color;
+        this.model = model;
+        this.engine = engine;
+        this.price = price;
+    }
+
+    displayInfo() {
+        return `Color: ${this.color}, Model: ${this.model}, Engine: ${this.engine}, Price: ${this.price}`;
+    }
+}
+
+class ChildCar extends Car {
+    constructor(color, model, engine, price, owner) {
+        super(color, model, engine, price);
+        this.owner = owner;
+    }
+
+    displayOwner() {
+        return `Owner: ${this.owner}`;
+    }
+    displayInfo() {
+        return `${super.displayInfo()}, Owner: ${this.owner}`;
+    }
+}
+
+const car1 = new Car('Red', 'Toyota', 'V6', 30000);
+console.log(car1.displayInfo());
+
+const childCar1 = new ChildCar('Blue', 'Honda', 'V8', 35000, 'John Doe');
+console.log(childCar1.displayInfo());
+console.log(childCar1.displayOwner());
+
+</script>

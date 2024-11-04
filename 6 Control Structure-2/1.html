@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Electricity bill</h1>
+    <h1>Enter Amount:</h1>
+    <input type="text" id="bill">
+
+    <h1 id="ans"></h1>
+</body>
+</html>
+<script>
+let a = document.getElementById("bill").value
+if (a <= 100) {
+        document.getElementById("ans").innerHTML = "$1 per unit";
+    } else if (a <= 200) {
+        document.getElementById("ans").innerHTML = "$2 per unit";
+    } else {
+        document.getElementById("ans").innerHTML = "$3 per unit";
+    }
+</script>

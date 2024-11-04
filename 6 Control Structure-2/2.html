@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter 4 number</h1>
+    <input type="text" id="a1"><br><br>
+    <input type="text" id="a2"><br><br>
+    <input type="text" id="a3"><br><br>
+    <input type="text" id="a4"><br><br>
+
+    <h1 id="ans"></h1>
+</body>
+</html>
+<script>
+let num1 = document.getElementById("a1").value
+let num2 = document.getElementById("a2").value
+let num3 = document.getElementById("a3").value
+let num4 = document.getElementById("a4").value
+
+if( a === "" || b === "" || c === "" || d === ""){
+
+    document.getElementById("ans").innerHTML="enter number"
+
+}else{
+        if (num1 <= num2 && num1 <= num3 && num1 <= num4) {
+            document.getElementById("ans").innerHTML = num1;
+        } else if (num2 <= num1 && num2 <= num3 && num2 <= num4) {
+            document.getElementById("ans").innerHTML = num2;
+        } else if (num3 <= num1 && num3 <= num2 && num3 <= num4) {
+            document.getElementById("ans").innerHTML = num3;
+        } else {
+            document.getElementById("ans").innerHTML = num4;
+        }
+}
+</script>

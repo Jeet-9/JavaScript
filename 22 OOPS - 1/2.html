@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+</head>
+<body>
+    <h2>Area Calculator</h2>
+    <label for="length">Length of Rectangle:</label>
+    <input type="number" id="length"><br><br>
+    <label for="width">Width of Rectangle:</label>
+    <input type="number" id="width"><br><br>
+    <button onclick="areaOfRectangle()">Calculate Rectangle Area</button><br>
+    <div id="rectangleResult"></div><br><br>
+
+    <label for="side">Side of Square:</label>
+    <input type="number" id="side"><br><br>
+    <button onclick="areaOfSquare()">Calculate Square Area</button><br>
+    <div id="squareResult"></div>
+</body>
+</html>
+<script>
+    //rectangle
+    function areaOfRectangle() {
+        var length = parseFloat(document.getElementById("length").value);
+        var width = parseFloat(document.getElementById("width").value);
+        var area = length * width;
+        document.getElementById("rectangleResult").innerHTML = "Area of Rectangle: " + area;
+    }
+
+    //square
+    function areaOfSquare() {
+        var side = parseFloat(document.getElementById("side").value);
+        var area = side * side;
+        document.getElementById("squareResult").innerHTML = "Area of Square: " + area;
+    }
+</script>

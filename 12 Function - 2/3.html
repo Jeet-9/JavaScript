@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>String Concatenator</h1>
+    <label for="str1">String 1:</label>
+    <input type="text" id="str1"><br><br>
+    <label for="str2">String 2:</label>
+    <input type="text" id="str2"><br><br>
+    <button onclick="concatenateStrings()">Concatenate Strings</button><br><br>
+    <div id="concatenated"></div>
+</body>
+</html>
+<script>
+    function concatenateStrings() {
+        var str1 = document.getElementById('str1').value;
+        var str2 = document.getElementById('str2').value;
+        var result = str1 + str2;
+        document.getElementById('concatenated').innerText = "Concatenated String: " + result;
+    }
+</script>

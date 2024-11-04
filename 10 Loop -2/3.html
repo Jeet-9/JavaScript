@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Enter Any Number:</h1>
+        <input type="text" id="ans">
+    </center>
+</body>
+</html>
+<script>
+let number = 1; 
+let a = document.getElementById("ans").value
+
+do {
+    if (number % 2 === 0) { 
+        console.log(number); 
+    }
+    number++;
+} while (number <= a);  
+</script>

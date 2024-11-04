@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+.error {
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<center>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <span id="nameError" class="error"></span><br>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone"><br>
+        <span id="phoneError" class="error"></span><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <span id="emailError" class="error"></span><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordError" class="error"></span><br>
+        
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword"><br>
+        <span id="confirmPasswordError" class="error"></span><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</center>
+
+<script>
+$(document).ready(function() {
+    $('#myForm').submit(function(event) {
+        event.preventDefault();
+    
+        $('.error').text('');
+        
+        var name = $('#name').val();
+        var phone = $('#phone').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
+        var confirmPassword = $('#confirmPassword').val();
+        
+        // Validate name
+        if (name === '') {
+            $('#nameError').text('Name is required');
+            return;
+        }
+        
+        // Validate phone number
+        if (phone === '') {
+            $('#phoneError').text('Phone number is required');
+            return;
+        }
+        var phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(phone)) {
+            $('#phoneError').text('Invalid phone number');
+            return;
+        }
+        // Validate email
+        if (email === '') {
+            $('#emailError').text('Email is required');
+            return;
+        }
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            $('#emailError').text('Invalid email format');
+            return;
+        }
+        // Validate password
+        if (password === '') {
+            $('#passwordError').text('Password is required');
+            return;
+        }
+        // Validate confirm password
+        if (confirmPassword === '') {
+            $('#confirmPasswordError').text('Please confirm your password');
+            return;
+        }
+        // Check if password and confirm password match
+        if (password !== confirmPassword) {
+            $('#confirmPasswordError').text('Passwords do not match');
+            return;
+        }
+        alert('Form submitted successfully!');
+    });
+});
+</script>
+
+</body>
+</html>

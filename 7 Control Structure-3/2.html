@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Document</title>
+</head>
+<body>
+    <h1>Enter 3 Values</h1>
+    <input type="text" id="in1">
+    <input type="text" id="in2">
+    <input type="text" id="in3">
+
+    <h1 id="ans"></h1>
+
+    <h1 id="error"></h1>
+</body>
+</html>
+<script>
+    let a = document.getElementById("in1").value
+    let b = document.getElementById("in2").value
+    let c = document.getElementById("in3").value
+
+    let sum = +a + +b + +c;
+
+    if(sum === 180){
+        document.getElementById("ans").innerHTML = "Triangle"
+
+        if(a === b && b === c && c === a){
+            document.getElementById("error").innerHTML = "Equilateral Triangle"
+        } else if (a != b && b != c && c != a){
+            document.getElementById("error").innerHTML = "Scalene Triangle"
+        } else {
+            document.getElementById("error").innerHTML = "Isoceles Triangle"
+        } 
+    } else {
+        document.getElementById("error").innerHTML = "This is NOT A Triangle"
+    }
+</script>

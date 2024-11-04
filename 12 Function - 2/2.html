@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Rectangle Area Calculator</h1>
+    <label for="length">Length:</label>
+    <input type="number" id="length"><br><br>
+    <label for="width">Width:</label>
+    <input type="number" id="width"><br><br>
+    <button onclick="calculateRectangleArea()">Calculate Area</button><br><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    function calculateRectangleArea() {
+        var length = parseFloat(document.getElementById('length').value);
+        var width = parseFloat(document.getElementById('width').value);
+        
+        var area = length * width;
+        
+        document.getElementById('result').innerHTML = "Area: " + area;
+    }
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class person{
+        constructor(name , work , wolking , studying){
+            this.name = name
+            this.work = work
+            this.wolking = wolking
+            this.studying = studying
+        }
+
+        Name(){
+            console.log(this.name + " my name")
+        }
+        Work(){
+            console.log(this.work + " Is my favourite work")
+        }
+        Wolking(){
+            console.log(this.wolking + " Is my morning wolking")
+        }
+        Studying(){
+            console.log(this.studying + " Is my studying")
+        }
+
+
+    }
+    class son extends person{
+
+    }
+    let sons = new son("utsav","webdevelopment","job","bca")
+    console.log(sons)
+    sons.Name()
+    sons.Work()
+    sons.Wolking()
+    sons.Studying()
+</script>

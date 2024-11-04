@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Enter A Value:</h1>
+        <input type="text" id="num">
+    </center>
+</body>
+</html>
+<script>
+    function factorial() {
+    let a = document.getElementById("num").value
+    let ans = 1;
+    for (let i = 1; i<=a; i++){
+        ans *= i; 
+    }
+    console.log(ans);
+}
+factorial()
+</script>

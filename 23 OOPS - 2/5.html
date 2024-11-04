@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+.error {
+    color: red;
+}
+</style>
+</head>
+<body>
+
+<center>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <span id="nameError" class="error"></span><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordError" class="error"></span><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</center>
+
+<script>
+$(document).ready(function() {
+    $('#myForm').submit(function(event) {
+        event.preventDefault();
+    
+        $('.error').text('');
+        
+        var name = $('#name').val();
+        var password = $('#password').val();
+        
+        // Validate name
+        if (name === '') {
+            $('#nameError').text('Name is required');
+            return;
+        }
+        // Validate password
+        if (password === '') {
+            $('#passwordError').text('Password is required');
+            return;
+        }
+        alert('Form submitted successfully!');
+    });
+});
+</script>
+
+</body>
+</html>

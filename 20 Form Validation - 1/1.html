@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Form Validation</title>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+<center>
+    <h2>Registration Form</h2>
+
+    <form id="signup">
+
+        <label for="">Enter Name:</label>
+        <input type="text" id="name">
+        <br><br>
+
+        <label for="">Enter Phone:</label>
+        <input type="text" id="Phone">
+        <br><br>
+
+        <label for="">Enter Email:</label>
+        <input type="text" id="email">
+        <br><br>
+
+        <label for="">Enter Password:</label>
+        <input type="text" id="password">
+        <br><br>
+
+        <label for="">Enter Confirm Password:</label>
+        <input type="text" id="cpa">
+        <br><br>
+
+        <input type="submit">
+        <br><br>
+
+        <span id="err"></span>
+    </form>
+</center>
+
+<script>
+    document.getElementById("signup").onsubmit = function(event){
+        event.preventDefault()
+        document.getElementById("err").innerHTML=""
+        try{
+            let name = document.getElementById("name").value 
+            let phone = document.getElementById("Phone").value
+            let email = document.getElementById("email").value
+            let pw = document.getElementById("password").value
+            let cps = document.getElementById("cpa").value
+
+            if(!/([a-zA-Z0-9_\s]+)/.test(name)){
+                throw new Error("Invalid Name !") 
+            }
+            if(!/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/.test(phone)){
+                throw new Error("Invalid Phone Number !")
+            }
+            if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)){
+                throw new Error("Invalid Email !")
+            }
+            if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(pw)){
+                throw new Error("Invaild Password !")
+            }
+            if(pw !== cps){
+                throw new Error("Invaild Correct Password !")
+            }
+
+        }
+        catch(err){
+            document.getElementById("err").innerHTML = err.message
+        }
+    }
+</script>
+
+</body>
+</html>

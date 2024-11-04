@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 class="head1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus laudantium molestias quia magnam assumenda! Ex quam debitis officiis aliquid rerum quia amet corporis dicta iste at? Quia, odit ea?</h1>
+    <h3 class="head2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus laudantium molestias quia magnam assumenda! Ex quam debitis officiis aliquid rerum quia amet corporis dicta iste at? Quia, odit ea?</h3>
+    <h5 class="head3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus laudantium molestias quia magnam assumenda! Ex quam debitis officiis aliquid rerum quia amet corporis dicta iste at? Quia, odit ea?</h5>
+    <button onclick="a()">ok</button>
+    <button onclick="b()">ok</button>
+    <button onclick="c()">ok</button>
+
+
+
+    <h1 class="inp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus laudantium molestias quia magnam assumenda! Ex quam debitis officiis aliquid rerum quia amet corporis dicta iste at? Quia, odit ea?</h1>
+    <h3 class="inp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus laudantium molestias quia magnam assumenda! Ex quam debitis officiis aliquid rerum quia amet corporis dicta iste at? Quia, odit ea?</h3>
+    <h5 class="inp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusamus laudantium molestias quia magnam assumenda! Ex quam debitis officiis aliquid rerum quia amet corporis dicta iste at? Quia, odit ea?</h5>
+    
+    <button onclick="a1()">ok</button>
+    <button onclick="b1()">ok</button>
+    <button onclick="c1()">ok</button>
+</body>
+</html>
+
+<script>
+    function a(){
+        let h1 = document.querySelector(".head1")
+        h1.style.color = "red"        
+    }
+
+    function b(){
+        let h3 = document.querySelector(".head2")
+    h3.style.color = "green"        
+    }
+    function c(){
+        let h5 = document.querySelector(".head3")
+        h5.style.color = "blue"        
+    }
+
+    function a1(){
+        let grn = document.querySelectorAll(".inp")
+        for(let  i = 0 ; i<grn.length; i++){
+            grn[i].style.color = "red";
+        }
+    }
+
+
+    function b1(){
+        let grn = document.querySelectorAll(".inp")
+        for(let  i = 0 ; i<grn.length; i++){
+            grn[i].style.color = "green";
+        }
+    }
+
+    function c1(){
+        let grn = document.querySelectorAll(".inp")
+        for(let  i = 0 ; i<grn.length; i++){
+            grn[i].style.color = "blue";
+        }
+    }
+
+
+
+     </script>

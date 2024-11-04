@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter Password:</h1>
+    <input type="text" id="in1">
+
+    <h1 id="error"></h1>
+</body>
+</html>
+<script>
+    let enteredpassword = document.getElementById("in1").value
+    let storedpassword = "abc@999"
+
+    if(enteredpassword === ""){
+        document.getElementById("error").innerHTML = "Please enter your password"
+    } else if(enteredpassword === storedpassword){
+        document.getElementById("error").innerHTML = "Welcome to website"
+    } else {
+        document.getElementById("error").innerHTML = "Incorrect Password"
+        let newpassword = prompt("Forgot Password ? create new")
+
+        if(newpassword.length >= 8){
+            document.getElementById("error").innerHTML = "New password created"
+        } else {
+            document.getElementById("error").innerHTML = "Minimum length should be 8"
+        }
+    }
+</script>

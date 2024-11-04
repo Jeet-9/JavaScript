@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Arithmetic Operations</title>
+</head>
+<body>
+    <h2>Simple Arithmetic Operations</h2>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1"><br><br>
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2"><br><br>
+    <label for="operation">Operation:</label>
+    <select id="operation">
+        <option value="sum">Sum</option>
+        <option value="product">Product</option>
+        <option value="subtract">Subtract</option>
+        <option value="divide">Divide</option>
+    </select><br><br>
+    <button onclick="calculate()">Calculate</button><br><br>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    //add 
+    function sum(a, b) {
+        return a + b;
+    }
+
+    //multiply 
+    function product(a, b) {
+        return a * b;
+    }
+
+    //subtract 
+    function subtract(a, b) {
+        return a - b;
+    }
+
+    //divide 
+    function divide(a, b) {
+        if (b === 0) {
+            return "Cannot divide by zero!";
+        }
+        return a / b;
+    }
+
+    function calculate() {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var operation = document.getElementById("operation").value;
+        var result;
+
+        switch (operation) {
+            case "sum":
+                result = sum(num1, num2);
+                break;
+            case "product":
+                result = product(num1, num2);
+                break;
+            case "subtract":
+                result = subtract(num1, num2);
+                break;
+            case "divide":
+                result = divide(num1, num2);
+                break;
+            default:
+                result = "Invalid operation";
+        }
+
+        document.getElementById("result").innerHTML = "Result: " + result;
+    }
+</script>

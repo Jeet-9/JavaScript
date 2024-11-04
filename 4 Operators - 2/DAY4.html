@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- swap -->
+    <center>
+        <h1 style="border: 1px solid rebeccapurple;">swap</h1>
+
+        <h1>first value</h1>
+        <input type="text" id="in1"></input>
+        
+        <h1>second value</h1>
+        <input type="text" id="in2"></input>
+
+        <h1 id="ans1"></h1>
+        <h1 id="ans2"></h1>
+
+        <h1 style="border: 1px solid rebeccapurple;">bill after gst calculation</h1>
+        <h1>food-1</h1>
+        <input type="text" id="f1"></input>
+
+        <h1>food-2</h1>
+        <input type="text" id="f2"></input>
+
+        <h1>food-3</h1>
+        <input type="text" id="f3"></input>
+
+        <h1>food-4</h1>
+        <input type="text" id="f4"></input>
+
+        <h1 id="bill ans"></h1>
+
+        <!-- calculate salary add bonus, deduct tax , insurance and p -->
+        <h1 style="border: 1px solid rebeccapurple;">slary total</h1>
+        
+        <h1>salary</h1>
+        <input type="text" id="s1"></input>
+
+        <h1>bonus</h1>
+        <input type="text" id="s2"></input>
+        
+        <h1>deduct tax</h1>
+        <input type="text" id="s3"></input>
+
+        <h1>Insurance</h1>
+        <input type="text" id="s4"></input>
+
+        <h1>PF</h1>
+        <input type="text" id="s5"></input>
+
+        <h1 id="total salary"></h1>
+    </center>
+    
+</body>
+</html>
+<script>
+    // swap
+
+let a= document.getElementById("in1").value
+let b= document.getElementById("in2").value
+
+document.getElementById("ans1").innerHTML=b
+document.getElementById("ans2").innerHTML=a
+
+// bill after gst calculation
+
+let a1= document.getElementById("f1").value
+let a2= document.getElementById("f2").value
+let a3= document.getElementById("f3").value
+let a4= document.getElementById("f4").value 
+
+let total=  +a1 + +a2 + +a3 + +a4
+let gst= total * 12 / 100
+let billtotal= total + gst
+
+// let total=(a1+a2+a3+a4)*12/100
+document.getElementById("bill ans").innerHTML=billtotal
+
+
+
+//calculate salary add bonus, deduct tax , insurance and p
+
+
+let c1= document.getElementById("s1").value
+let c2= document.getElementById("s2").value
+let c3= document.getElementById("s3").value
+let c4= document.getElementById("s4").value
+let c5= document.getElementById("s5").value  
+
+let stotal=  +c1 + +c2 - +c3 - +c4 - +c5
+
+document.getElementById("total salary").innerHTML=stotal
+
+</script>
